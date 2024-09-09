@@ -24,6 +24,7 @@ GrabModeAsync,w,cur,CurrentTime)==GrabSuccess){
 	XAllowEvents(dpl,SyncPointer,CurrentTime);
 	do{
 	XMaskEvent(dpl,PointerMotionMask|ButtonPressMask,&ev);
+	XAllowEvents(dpl,ReplayPointer,CurrentTime);
 	XUngrabPointer(dpl,CurrentTime);
 	}while(XPending(dpl));
 	nanosleep(&dly,0);
